@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col text-center">
+<h1>New York Times Best Sellers</h1>
+<div class="row">
+  <div class="col">
+</div>
+</div>
+<div class="row">
+  <div class="col" style="margin-bottom:2%;">
+    <h2>Select a category</h2>
+    <button class="btn btn-primary"(click)="setCategoryCP()">Combined Print and E-Book Fiction</button>
+    <button class="btn btn-primary"(click)="setCategoryHF()">Hardcover Fiction</button>
+    <button class="btn btn-primary"(click)="setCategoryCPN()">Combined Print and E-Book Nonfiction</button>
+    <button class="btn btn-primary"(click)="setCategoryHN()">Hardcover Nonfiction</button>
+    <button class="btn btn-primary"(click)="setCategoryPN()">Paperback Nonfiction</button>
+  </div>
+</div>
+<div *ngIf="gotData" ></div>
+<div class="row">
+<div class="card col-4" *ngFor="let book of books">
+    <div class="card-body">
+      <h5 class="card-title">{{book.title}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{ book.author }}</h6>
+      <p class="card-text">{{book.description}}</p>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+</div>
+<router-outlet></router-outlet>
